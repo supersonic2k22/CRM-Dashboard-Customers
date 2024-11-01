@@ -1,0 +1,168 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Dashboard
+    link(rel="stylesheet" href="styles.css")
+
+  body
+    .dashboard
+      aside.sidebar
+        .logo
+          a(href="#") 
+            img.logo-icon(src="assets/img/logo-icon.svg" alt="Dashboard logo")
+          h1.logo-font Dashboard 
+            span.version-logo v0.1
+        nav.menu
+          ul
+            li
+              a(href="#") 
+                img(src="assets/img/dashboard-icon.svg" alt="Dashboard icon")
+                |  Dashboard
+            li
+              a(href="#") 
+                img(src="assets/img/product-icon.svg" alt="Product icon")
+                |  Product
+            li.active
+              a(href="#") 
+                img(src="assets/img/customers-icon.svg" alt="Customers icon")
+                |  Customers
+            li
+              a(href="#") 
+                img(src="assets/img/income-icon.svg" alt="Income icon")
+                |  Income
+            li
+              a(href="#") 
+                img(src="assets/img/promote-icon.svg" alt="Promote icon")
+                |  Promote
+            li
+              a(href="#") 
+                img(src="assets/img/help-icon.svg" alt="Help icon")
+                |  Help 
+        .profile
+          img(src="assets/img/evano.png" alt="Evano")
+          .profile-txt
+            p.bold Evano
+            p Project Manager
+
+      main.content
+        .header
+          h2 Hello Evano 👋
+        
+        .customers
+          h3 All Customers
+          p.active-members Active Members
+          
+          .search-bar
+            button
+              img(src="assets/img/search-icon.svg" alt="Search icon")
+            input(type="text" placeholder="Search")
+          .customer-table
+            table
+              thead
+                tr
+                  th Customer Name
+                  th Company
+                  th Phone Number
+                  th Email
+                  th Country
+                  th Status
+              tbody
+                tr
+                  td Jane Cooper
+                  td Microsoft
+                  td (225) 555-0118
+                  td jane@microsoft.com
+                  td United States
+                  td.status.active Active
+                tr
+                  td Floyd Miles
+                  td Yahoo
+                  td (205) 555-0100
+                  td floyd@yahoo.com
+                  td Kiribati
+                  td.status.inactive Inactive
+                tr
+                  td Ronald Richards
+                  td Adobe
+                  td (302) 555-0107
+                  td ronald@adobe.com
+                  td Israel
+                  td.status.inactive Inactive
+                tr
+                  td Marvin McKinney
+                  td Tesla
+                  td (252) 555-0126
+                  td marvin@tesla.com
+                  td Iran
+                  td.status.active Active
+                tr
+                  td Jerome Bell
+                  td Google
+                  td (629) 555-0126
+                  td jerome@google.com
+                  td Réunion
+                  td.status.active Active
+                tr
+                  td Kathryn Murphy
+                  td Microsoft
+                  td (408) 555-0120
+                  td kathryn@microsoft.com
+                  td Curaçao
+                  td.status.active Active
+                tr
+                  td Jacob Jones
+                  td Yahoo
+                  td (208) 555-0112
+                  td jacob@yahoo.com
+                  td Brazil
+                  td.status.active Active
+                tr
+                  td Kristin Watson
+                  td Facebook
+                  td (704) 555-0127
+                  td kristin@facebook.com
+                  td Åland Islands
+                  td.status.inactive Inactive
+
+            .pagination
+              span Showing data 1 to 8 of 256K entries
+              ul
+                li
+                  a(href="#", aria-label="Previous") <
+                li.active
+                  a(href="#") 1
+                li
+                  a(href="#") 2
+                li
+                  a(href="#") 3
+                li
+                  a(href="#") 4
+                li
+                  | ...
+                li
+                  a(href="#") 40
+                li
+                  a(href="#", aria-label="Next") >
+    script(src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js")
+    script.
+      document.addEventListener("DOMContentLoaded", function() {
+        const tl = gsap.timeline();
+
+        tl.from(".sidebar", {
+          duration: 1,
+          x: -500, 
+          opacity: 0,
+          ease: "power2.out"
+        })
+        .from(".content", {
+          duration: 1,
+          y: 250,
+          opacity: 0,
+          ease: "power2.out",
+        });
+      });
+
+
+
