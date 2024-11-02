@@ -70,6 +70,7 @@ body {
 
 .menu ul li {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .menu ul li a {
@@ -306,4 +307,20 @@ tr {
   display: flex;
   justify-content: space-between;
   align-items: end;
+}
+.menu ul li::after{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url('assets/img/menu-right-arrow-icon.svg');
+}
+.menu ul li.active::after,.menu ul li:hover::after{
+  filter: brightness(0) invert(1);
+}
+.menu ul li:first-child::after {
+  content: none;
 }
